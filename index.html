@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTB EARNING | SHOHAG VAII</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        /* Background Animation */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: floatUp 10s linear infinite;
+        }
+
+        .bubble:nth-child(1) { left: 10%; width: 60px; height: 60px; animation-duration: 12s; animation-delay: 0s; }
+        .bubble:nth-child(2) { left: 20%; width: 40px; height: 40px; animation-duration: 8s; animation-delay: 2s; }
+        .bubble:nth-child(3) { left: 30%; width: 50px; height: 50px; animation-duration: 15s; animation-delay: 4s; }
+        .bubble:nth-child(4) { left: 40%; width: 30px; height: 30px; animation-duration: 10s; animation-delay: 6s; }
+        .bubble:nth-child(5) { left: 50%; width: 70px; height: 70px; animation-duration: 20s; animation-delay: 8s; }
+        .bubble:nth-child(6) { left: 60%; width: 40px; height: 40px; animation-duration: 10s; animation-delay: 10s; }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-110vh); opacity: 0; }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn {
+            font-size: 1.1rem;
+            padding: 12px 25px;
+            margin: 10px 5px;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary { background-color: #007bff; }
+        .btn-success { background-color: #28a745; }
+        .btn-warning { background-color: #ffc107; }
+        .btn-red { background-color: #f44336; color: #fff; }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Animation -->
+<div class="background">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+</div>
+
+<div class="container animate__animated animate__fadeIn">
+    <h2>Watch Ads and Earn Rewards</h2>
+    <div>
+        <button id="showAdButton1" class="btn btn-primary">Show Ad 1</button>
+        <button id="showAdButton2" class="btn btn-success">Show Ad 2</button>
+        <button id="showAdButton3" class="btn btn-warning">Show Ad 3</button>
+        <button id="showAdButton4" class="btn btn-red">Show Ad 4</button>
+    </div>
+    <footer>
+        Powered by <a href="#">FAKE TECH BD</a> | Designed by <strong>SHOHAG VAII</strong>
+    </footer>
+</div>
+
+<!-- Ad Script -->
+<script src='//niphaumeenses.net/vignette.min.js' data-zone='8587370' data-sdk='show_8587370'></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+    function showAd(buttonId) {
+        // Trigger ad from the provided SDK
+        try {
+            window.show_8587370(); // Show the ad via the Monetag SDK
+            toastr.success(`You have watched the ad via ${buttonId} and earned a reward!`, 'Congratulations');
+        } catch (error) {
+            toastr.error('Failed to load the ad. Please try again.', 'Error');
+            console.error(error);
+        }
+    }
+
+    document.getElementById('showAdButton1').addEventListener('click', function() {
+        showAd('Ad 1');
+    });
+
+    document.getElementById('showAdButton2').addEventListener('click', function() {
+        showAd('Ad 2');
+    });
+
+    document.getElementById('showAdButton3').addEventListener('click', function() {
+        showAd('Ad 3');
+    });
+
+    document.getElementById('showAdButton4').addEventListener('click', function() {
+        showAd('Ad 4');
+    });
+</script>
+
+</body>
+</html>
